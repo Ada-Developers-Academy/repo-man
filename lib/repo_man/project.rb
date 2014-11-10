@@ -17,7 +17,7 @@ class RepoMan::Project
     if team.size == 1
       team.first
     else
-      Faker::Company.name
+      Faker::Commerce.color
     end
   end
 end
