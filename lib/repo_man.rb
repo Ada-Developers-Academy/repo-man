@@ -1,22 +1,3 @@
-require "octokit"
-class RepoMan
-  REPO_OPTIONS = {organization: "Ada-Projects", auto_init: true}
+module RepoMan;end
 
-  def initialize(project_name, student_name)
-    @project_name = project_name
-    @student_name = student_name
-  end
-
-  def repo_name
-    "#{@project_name}-#{@student_name}"
-  end
-
-  def save
-    Octokit.create_repository repo_name, REPO_OPTIONS
-  end
-
-  def self.create(*args)
-    self.new(*args).save
-  end
-
-end
+require_relative "repo_man/repo"
