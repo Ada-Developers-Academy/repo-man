@@ -15,4 +15,8 @@ class RepoMan
     Octokit.create_repository repo_name, REPO_OPTIONS
   end
 
+  def self.create(*args)
+    self.new(*args).save
+  end
+
 end

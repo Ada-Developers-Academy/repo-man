@@ -9,4 +9,12 @@ describe RepoMan do
       repo_man.save
     end
   end
+
+  describe '.create' do
+    it 'calls save on a new instance' do
+      expect(RepoMan).to receive(:new).with("Cooks", "Bookis").and_return(repo_man)
+      expect(repo_man).to receive(:save)
+      RepoMan.create("Cooks", "Bookis")
+    end
+  end
 end
