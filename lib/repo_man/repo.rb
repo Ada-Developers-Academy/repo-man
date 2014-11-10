@@ -2,13 +2,13 @@ require "octokit"
 class RepoMan::Repo
   REPO_OPTIONS = {organization: "Ada-Projects", auto_init: true}
 
-  def initialize(project_name, student_name)
+  def initialize(project_name, team_name)
     @project_name = project_name
-    @student_name = student_name
+    @team_name    = team_name
   end
 
   def repo_name
-    "#{@project_name}-#{@student_name}"
+    "#{@project_name}-#{@team_name}"
   end
 
   def save
